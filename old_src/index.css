@@ -4,18 +4,14 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans'; */
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
-  /* background-color: rgb(183, 199, 195)!important;
-  color: rgb(55, 69, 59); */
+  background-color: rgb(43, 50, 48)!important;
+  color: rgb(55, 69, 59);
 }
 
 * {
   /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New'; */
   
   
-}
-a{
-  color: #000!important;
-  text-decoration: none;
 }
 .nav{
   background-color: rgb(39, 41, 46);
