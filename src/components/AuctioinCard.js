@@ -226,9 +226,10 @@ return (
           //  display: '',
            margin:3,mt:9,
            boxShadow: "0 2px 10px 2px rgba(1, 253, 144, 0.2), 0 6px 20px 0 rgba(78, 127, 103, 0.19)",
-           backgroundColor:"white",
-           direction:"row"
-           
+           backgroundColor:"#EFEFEF",
+           direction:"row",
+           color:"#174A5F",
+           fontFamily:"sans-serif"
           }}
            
           
@@ -256,7 +257,7 @@ return (
             <Typography gutterBottom variant="h5" component="div">
             {item.itemTitle}
             </Typography>
-            <Typography variant="body2" color="text.secondary" >
+            <Typography variant="body2" color="#174A5F" >
             {item.itemDisc}
             </Typography>
           </CardContent>
@@ -283,7 +284,9 @@ return (
           <div className="d-flex justify-content-between align-item-right">
               <div>
                
-                      <Button variant='contained'
+                      <Button 
+                        variant='contained'
+                        
                          onClick={()=>{user?
                           formD2(item.id)
                           :setErr("Please login First !");

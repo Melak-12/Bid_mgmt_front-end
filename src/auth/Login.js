@@ -86,7 +86,7 @@ catch (error) {
     <>
     <div style={
       {
-       color: 'black'
+       color: 'white'
       }
      }
      className="btn"

@@ -97,7 +97,7 @@ return (
     
      <>
 
-    <div onClick={open} style={{color:'black'}} className="btn mx-2 px">Register</div>
+    <div onClick={open} style={{color:'white'}} className="btn mx-2 px">Register</div>
       <Modal  centered show={showform} onHide={closeform}>
   <Box sx={{m:6}}>
       <Container sx={{pt:3}}>

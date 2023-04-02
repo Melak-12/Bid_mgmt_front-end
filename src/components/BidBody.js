@@ -4,7 +4,7 @@ import { useEffect,useState,useContext } from 'react'
 import AddBid from './AddBid'
 import AuctionCard from './AuctioinCard'
 import { AuthContext } from '../context/authContext'
-import { Alert, AlertTitle, Box } from '@mui/material'
+import { Alert, AlertTitle, Box, Typography } from '@mui/material'
 import { Modal } from 'react-bootstrap'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Contactus from './Contactus'
@@ -39,13 +39,13 @@ const BidBody = () => {
      <BrowserRouter>
      
 
-     {/* <NavBar/> */}
+     <NavBar/>
      {/* <SideBar/> */}
      {err?
-         <Modal centered show={openform} onHide={closeform}style={{top: "32px"}}>
-           <Alert severity='info' sx={{p:5,backgroundColor:"#00ccff"}}>
-          <AlertTitle>Bidder Unknown !</AlertTitle>
-            &nbsp;&nbsp;&nbsp;&nbsp;{err}
+         <Modal centered show={openform} onHide={closeform}style={{top: "32px",backgroundColor:"174A5"}}>
+           <Alert severity='info' sx={{p:5,backgroundColor:"#174A5F"}}>
+          <AlertTitle sx={{color:"yellow"}}>Bidder Unknown !</AlertTitle>
+            &nbsp;&nbsp;&nbsp;&nbsp;<Typography sx={{color:"yellow",fontFamily:"sans-serif"}}>{err}</Typography>
         </Alert>
         </Modal>
        
@@ -83,8 +83,8 @@ const BidBody = () => {
        <Route path="" element={<Footer/>}/>
         
        </Routes>
-       {/* <AuctionCard/> */}
-       <h1>this is footer</h1>
+     
+      <Footer/>
      </BrowserRouter> 
   )
 }

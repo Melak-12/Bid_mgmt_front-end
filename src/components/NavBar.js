@@ -196,10 +196,10 @@ const Navbar=()=> {
     },
   }));
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex'}}>
           {/* <SearchItem data={searchData}/> */}
       <CssBaseline />
-      <AppBar position="fixed" open={open} >
+      <AppBar position="fixed" open={open} sx={{backgroundColor:"#174A5F" }} >
       <StyledToolbar>
         <IconButton
             color="inherit"
