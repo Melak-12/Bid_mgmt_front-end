@@ -67,10 +67,9 @@ export default function Ava() {
   }));
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1 ,backgroundColor:"red",borderRadius:"50px"}}>
+      <AppBar position="static" style={{backgroundColor:"#0a2933",borderRadius:"80px"}}>
         <Toolbar>
-        
           {user? (
             <div>
               <IconButton
@@ -80,6 +79,7 @@ export default function Ava() {
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
+              
               >
                 <StyledBadge
                     overlap="circular"

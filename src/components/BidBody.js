@@ -50,7 +50,7 @@ const BidBody = () => {
         </Modal>
        
         :""}
-        {user=='melakabebeee@gmail.com'?
+        {user=='angel@gmail.com'?
         <AddBid/>:""}
        <Routes>
        

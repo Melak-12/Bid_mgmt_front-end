@@ -219,7 +219,7 @@ const Navbar=()=> {
         
         <Search>
           <InputBase placeholder="Search Bids..."inputRef={searchRef}/>
-          <Typography align="right" sx={{display:"inline",marginLeft:45}}>
+          <Typography align="right" sx={{display:"inline",marginLeft:5}}>
           <Typography sx={{display:"inline"}}><Link to="/search" style={{textDecoration:'none'}}><Typography sx={{color:"white",display:"inline"}}><SearchIcon/></Typography></Link></Typography>
           </Typography>
         </Search>
@@ -252,7 +252,7 @@ const Navbar=()=> {
         </StyledToolbar>
        </AppBar>
          {user?
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} >
         <DrawerHeader>
           <IconButton/>
           <IconButton onClick={handleDrawerClose}>
@@ -261,7 +261,7 @@ const Navbar=()=> {
         </DrawerHeader>
         {/* <Divider sx={{ borderBottomWidth: 115,color:"white" }} /> */}
         <Typography sx={{color:"white",backgroundColor:"black",margin:2,padding:1}}> System Options </Typography>
-         <List>
+         <List sx={{bgcolor:""}}>
           {['Bidders', 'Starred','my bids','privacy and policy'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton

@@ -25,7 +25,7 @@ const Register = () => {
    const nameRef=useRef()
    const emailRef=useRef()
    const passRef=useRef()
-   const cfpassRef=useRef()
+  //  const cfpassRef=useRef()
    useEffect( ()=>{
     function  fetchdata(){
       getData();
@@ -46,9 +46,9 @@ const Register = () => {
 const submitForm=async (e) =>{
     e.preventDefault();
 
-    if(passRef.current.value!==cfpassRef.current.value){
-     setErr('Password does not match !');
-    }
+    // if(passRef.current.value!==cfpassRef.current.value){
+    //  setErr('Password does not match !');
+    // }
    const newUser={
     name:nameRef.current.value,
     email:emailRef.current.value,
@@ -113,7 +113,7 @@ return (
             <TextField  fullWidth label="Name"autoFocus autoComplete='your name'sx={{mb:4}} inputRef={nameRef} type="text"/>
             <TextField fullWidth label="Email"autoComplete='your password'sx={{mb:4}}inputRef={emailRef} type="email"/>
             <TextField fullWidth label="Password"autoComplete='your Cpassword'sx={{mb:4}}inputRef={passRef} type="password"/>
-            <TextField fullWidth label="Conifrm Password"autoComplete='your password'sx={{mb:4}}inputRef={cfpassRef} type="password"/>
+            {/* <TextField fullWidth label="Conifrm Password"autoComplete='your password'sx={{mb:4}}inputRef={cfpassRef} type="password"/> */}
             <Button fullWidth color='primary' variant='contained' type='submit'>Register</Button>
           </Box>
       </Form>

@@ -35,7 +35,7 @@ const AddBid= async(formdata)=>{
     body: formdata
     
    });
-   const result=await add.json();
+   const result=await add.json(); 
    console.warn("this is added",result);
    getData();
 }
@@ -43,7 +43,7 @@ const getData=async()=>{
   const result=await fetch('http://127.0.0.1:8000/api/list');
       const res=await result.json();
       // const da=await data.json();
-      console.log('data', res)
+      console.warn('data is', res)
       // setData(res);
       // console.log('data 2',data)
 }
@@ -51,32 +51,43 @@ const getData=async()=>{
 const submitForm=(e)=>{
   e.preventDefault();
 
-if(!imageTypes.includes(itemImage.current.files[0].type)){
-setErr('not image');
-  console.log('not image type')
-}
-else {
-  const currDate=new Date();
-  let DueDate=currDate.setHours(
-    currDate.getHours()+itemDuration.current.value
-  )
- 
-  const formdata=new FormData();
-  formdata.append('itemTitle',itemTitle.current.value)
-  formdata.append('itemDisc',itemDsc.current.value)
-  formdata.append('itemImage',itemImage.current.files[0])
-  formdata.append('itemDuration',DueDate)
-  formdata.append('itemStartPrice',itemStartPrice.current.value)
-  formdata.append('currentWinner',"o")
+// if(!imageTypes.includes(itemImage.current.files[0].type)){
+// // setErr('not image');
+//   console.log('not image type')
+// }
+// else {
+//   const currDate = new Date();
 
-  console.log('form data elements are',formdata);
+// const hoursToAdd = parseInt(itemDuration.current.value);
+// const dueDate = new Date(currDate.getTime() + hoursToAdd * 60 * 60 * 1000);
 
-  AddBid(formdata);
+// const formdata = new FormData();
+// formdata.append('itemTitle', itemTitle.current.value);
+// formdata.append('itemDisc', itemDsc.current.value);
+// formdata.append('itemDuration', dueDate.toISOString().slice(0, 19).replace('T', ' '));
+// formdata.append('itemStartPrice', itemStartPrice.current.value);
+// formdata.append('currentWinner', "o");
+
+// console.log('form data elements are', formdata);
+
+// AddBid(formdata);
+const hoursToAdd = parseInt(itemDuration.current.value);
+const formdata = new FormData();
+formdata.append('itemTitle', itemTitle.current.value);
+formdata.append('itemDisc', itemDsc.current.value);
+formdata.append('itemDuration', hoursToAdd);
+formdata.append('itemStartPrice', itemStartPrice.current.value);
+formdata.append('currentWinner', "o");
+
+console.log('form data elements are', formdata);
+
+AddBid(formdata);
+
 
 closeform();
 //?install axios
 
-}
+// }
 
   
 }
@@ -147,7 +158,7 @@ closeform();
                     <Form.Control
                    // Label='select the item image'
                    //custum(false)
-                    required
+                    // required
                     type='file'ref={itemImage}/>
                 </FormGroup>
             </Col>
