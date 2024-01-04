@@ -51,11 +51,11 @@ const getData=async()=>{
 const submitForm=(e)=>{
   e.preventDefault();
 
-// if(!imageTypes.includes(itemImage.current.files[0].type)){
-// // setErr('not image');
-//   console.log('not image type')
-// }
-// else {
+if(!imageTypes.includes(itemImage.current.files[0].type)){
+setErr('not image');
+  console.log('not image type')
+}
+else {
 //   const currDate = new Date();
 
 // const hoursToAdd = parseInt(itemDuration.current.value);
@@ -75,19 +75,20 @@ const hoursToAdd = parseInt(itemDuration.current.value);
 const formdata = new FormData();
 formdata.append('itemTitle', itemTitle.current.value);
 formdata.append('itemDisc', itemDsc.current.value);
+formdata.append('itemImage',itemImage.current.files[0])
 formdata.append('itemDuration', hoursToAdd);
 formdata.append('itemStartPrice', itemStartPrice.current.value);
 formdata.append('currentWinner', "o");
 
 console.log('form data elements are', formdata);
-
+console.warn("the image is ",itemImage.current.files[0])
 AddBid(formdata);
 
 
 closeform();
 //?install axios
 
-// }
+}
 
   
 }
@@ -156,9 +157,9 @@ closeform();
                 <FormGroup>
                     <Form.Label>Item image</Form.Label>
                     <Form.Control
-                   // Label='select the item image'
+                   Label='select the item image'
                    //custum(false)
-                    // required
+                    required
                     type='file'ref={itemImage}/>
                 </FormGroup>
             </Col>
